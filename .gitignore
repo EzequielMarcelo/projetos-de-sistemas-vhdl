@@ -1,0 +1,33 @@
+# Quartus II Files and Folders
+db/                     # Banco de dados de compilação
+incremental_db/         # Dados de compilação incremental
+output_files/           # Arquivos de saída (SOF, POF, RBF, etc.)
+simulation/             # Arquivos de simulação gerados
+*.bak                   # Arquivos de backup
+*.qdf                   # Quartus design files (gerados automaticamente)
+*.qws                   # Quartus workspace settings (não necessário)
+*.qws.lock              # Lock do workspace
+*.srf                   # Arquivos de relatório de estado
+*.chg                   # Arquivos de alteração de settings
+*.rpt                   # Relatórios detalhados de compilação
+*.summary               # Resumo de compilação
+*.pin                   # Arquivo de mapeamento de pinos gerado
+*.jdi                   # Arquivos de dados de JTAG
+
+# Arquivos temporários e de configuração
+*.temp                  # Arquivos temporários
+*.log                   # Arquivos de log
+*.tmp                   # Arquivos temporários
+*.cdf                   # Configuração de programação de dispositivos
+*.sld                   # Arquivo de link simbólico (device programming)
+
+# ModelSim Files
+work/                   # Diretório de trabalho do ModelSim
+transcript              # Arquivo de transcrição do ModelSim
+*.wlf                   # Waveform Log File do ModelSim
+*.mti                   # Arquivos temporários do ModelSim
+*.mpf                   # ModelSim project file
+
+# Sistema e backups
+Thumbs.db               # Windows thumbnail cache
+*~                      # Arquivos de backup do sistema (geral)

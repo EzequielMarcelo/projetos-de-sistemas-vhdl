@@ -1,0 +1,635 @@
+TimeQuest Timing Analyzer report for gerador_pwm_display
+Tue Nov 05 21:34:03 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk_50MHz'
+ 12. Setup: 'clk_multiplex'
+ 13. Hold: 'clk_50MHz'
+ 14. Hold: 'clk_multiplex'
+ 15. Minimum Pulse Width: 'clk_50MHz'
+ 16. Minimum Pulse Width: 'clk_multiplex'
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Report TCCS
+ 22. Report RSKM
+ 23. Unconstrained Paths
+ 24. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; gerador_pwm_display                                               ;
+; Device Family      ; MAX II                                                            ;
+; Device Name        ; EPM240T100C5                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                       ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+; Clock Name    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets           ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+; clk_50MHz     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_50MHz }     ;
+; clk_multiplex ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_multiplex } ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+
+
++-----------------------------------------------------+
+; Fmax Summary                                        ;
++------------+-----------------+---------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name    ; Note ;
++------------+-----------------+---------------+------+
+; 113.87 MHz ; 113.87 MHz      ; clk_50MHz     ;      ;
+; 398.25 MHz ; 398.25 MHz      ; clk_multiplex ;      ;
++------------+-----------------+---------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------+
+; Setup Summary                          ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; clk_50MHz     ; -7.782 ; -216.419      ;
+; clk_multiplex ; -1.511 ; -2.726        ;
++---------------+--------+---------------+
+
+
++----------------------------------------+
+; Hold Summary                           ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; clk_50MHz     ; -1.597 ; -1.597        ;
+; clk_multiplex ; 1.661  ; 0.000         ;
++---------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++----------------------------------------+
+; Minimum Pulse Width Summary            ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; clk_50MHz     ; -2.289 ; -2.289        ;
+; clk_multiplex ; 0.234  ; 0.000         ;
++---------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk_50MHz'                                                                                                             ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -7.782 ; contador_multiplex[6]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 8.449      ;
+; -7.656 ; contador_multiplex[1]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 8.323      ;
+; -7.553 ; contador_multiplex[11] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 8.220      ;
+; -7.415 ; contador_multiplex[9]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 8.082      ;
+; -7.404 ; contador_multiplex[6]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 8.071      ;
+; -7.352 ; contador_multiplex[10] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 8.019      ;
+; -7.333 ; contador_multiplex[0]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 8.000      ;
+; -7.326 ; contador_multiplex[2]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.993      ;
+; -7.292 ; contador_multiplex[16] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.959      ;
+; -7.278 ; contador_multiplex[1]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.945      ;
+; -7.230 ; contador_multiplex[3]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.897      ;
+; -7.221 ; contador_multiplex[6]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.888      ;
+; -7.175 ; contador_multiplex[11] ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.842      ;
+; -7.168 ; contador_multiplex[5]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.835      ;
+; -7.158 ; contador_multiplex[13] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.825      ;
+; -7.140 ; contador_multiplex[17] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.807      ;
+; -7.117 ; contador_multiplex[7]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.784      ;
+; -7.095 ; contador_multiplex[1]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.762      ;
+; -7.079 ; contador_multiplex[6]  ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.746      ;
+; -7.079 ; contador_multiplex[4]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.746      ;
+; -7.073 ; contador_multiplex[15] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.740      ;
+; -7.055 ; contador_multiplex[18] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.722      ;
+; -7.037 ; contador_multiplex[9]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.704      ;
+; -7.030 ; contador_multiplex[6]  ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.697      ;
+; -6.994 ; contador_multiplex[8]  ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.661      ;
+; -6.992 ; contador_multiplex[11] ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.659      ;
+; -6.974 ; contador_multiplex[10] ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.641      ;
+; -6.955 ; contador_multiplex[0]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.622      ;
+; -6.953 ; contador_multiplex[1]  ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.620      ;
+; -6.948 ; contador_multiplex[2]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.615      ;
+; -6.914 ; contador_multiplex[6]  ; contador_multiplex[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.581      ;
+; -6.904 ; contador_multiplex[1]  ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.571      ;
+; -6.901 ; contador_multiplex[11] ; contador_multiplex[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.568      ;
+; -6.894 ; contador_multiplex[6]  ; contador_multiplex[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.561      ;
+; -6.892 ; contador_multiplex[17] ; contador_multiplex[3]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.559      ;
+; -6.866 ; contador_multiplex[19] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.533      ;
+; -6.854 ; contador_multiplex[9]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.521      ;
+; -6.853 ; contador_multiplex[6]  ; contador_multiplex[11] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.520      ;
+; -6.852 ; contador_multiplex[3]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.519      ;
+; -6.850 ; contador_multiplex[11] ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.517      ;
+; -6.846 ; contador_multiplex[21] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.513      ;
+; -6.840 ; contador_multiplex[17] ; contador_multiplex[7]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.507      ;
+; -6.839 ; contador_multiplex[17] ; contador_multiplex[14] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.506      ;
+; -6.801 ; contador_multiplex[11] ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.468      ;
+; -6.791 ; contador_multiplex[10] ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.458      ;
+; -6.790 ; contador_multiplex[5]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.457      ;
+; -6.788 ; contador_multiplex[1]  ; contador_multiplex[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.455      ;
+; -6.781 ; contador_multiplex[6]  ; contador_multiplex[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.448      ;
+; -6.780 ; contador_multiplex[13] ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.447      ;
+; -6.772 ; contador_multiplex[0]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.439      ;
+; -6.768 ; contador_multiplex[1]  ; contador_multiplex[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.435      ;
+; -6.765 ; contador_multiplex[2]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.432      ;
+; -6.744 ; contador_multiplex[20] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.411      ;
+; -6.739 ; contador_multiplex[7]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.406      ;
+; -6.739 ; contador_multiplex[18] ; contador_multiplex[3]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.406      ;
+; -6.731 ; contador_multiplex[22] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.398      ;
+; -6.727 ; contador_multiplex[1]  ; contador_multiplex[11] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.394      ;
+; -6.720 ; contador_multiplex[6]  ; contador_multiplex[21] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.387      ;
+; -6.712 ; contador_multiplex[9]  ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.379      ;
+; -6.709 ; contador_multiplex[6]  ; contador_multiplex[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.376      ;
+; -6.701 ; contador_multiplex[4]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.368      ;
+; -6.695 ; contador_multiplex[15] ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.362      ;
+; -6.690 ; contador_multiplex[12] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.357      ;
+; -6.687 ; contador_multiplex[18] ; contador_multiplex[7]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.354      ;
+; -6.686 ; contador_multiplex[18] ; contador_multiplex[14] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.353      ;
+; -6.685 ; contador_multiplex[11] ; contador_multiplex[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.352      ;
+; -6.669 ; contador_multiplex[3]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.336      ;
+; -6.665 ; contador_multiplex[11] ; contador_multiplex[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.332      ;
+; -6.663 ; contador_multiplex[9]  ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.330      ;
+; -6.655 ; contador_multiplex[1]  ; contador_multiplex[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.322      ;
+; -6.653 ; contador_multiplex[6]  ; contador_multiplex[20] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.320      ;
+; -6.652 ; contador_multiplex[6]  ; contador_multiplex[25] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.319      ;
+; -6.649 ; contador_multiplex[10] ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.316      ;
+; -6.647 ; contador_multiplex[6]  ; contador_multiplex[24] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.314      ;
+; -6.630 ; contador_multiplex[0]  ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.297      ;
+; -6.623 ; contador_multiplex[2]  ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.290      ;
+; -6.616 ; contador_multiplex[8]  ; contador_multiplex[19] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.283      ;
+; -6.609 ; contador_multiplex[6]  ; contador_multiplex[27] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.276      ;
+; -6.608 ; contador_multiplex[6]  ; contador_multiplex[22] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.275      ;
+; -6.607 ; contador_multiplex[5]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.274      ;
+; -6.600 ; contador_multiplex[10] ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.267      ;
+; -6.599 ; contador_multiplex[23] ; contador_multiplex[28] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.266      ;
+; -6.597 ; contador_multiplex[13] ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.264      ;
+; -6.594 ; contador_multiplex[1]  ; contador_multiplex[21] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.261      ;
+; -6.589 ; contador_multiplex[11] ; contador_multiplex[7]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.256      ;
+; -6.589 ; contador_multiplex[16] ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.256      ;
+; -6.588 ; contador_multiplex[11] ; contador_multiplex[14] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.255      ;
+; -6.583 ; contador_multiplex[1]  ; contador_multiplex[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.250      ;
+; -6.581 ; contador_multiplex[0]  ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.248      ;
+; -6.574 ; contador_multiplex[2]  ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.241      ;
+; -6.573 ; contador_multiplex[1]  ; contador_multiplex[10] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.240      ;
+; -6.556 ; contador_multiplex[7]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.223      ;
+; -6.547 ; contador_multiplex[9]  ; contador_multiplex[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.214      ;
+; -6.540 ; contador_multiplex[16] ; contador_multiplex[29] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.207      ;
+; -6.527 ; contador_multiplex[3]  ; contador_multiplex[23] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.194      ;
+; -6.527 ; contador_multiplex[9]  ; contador_multiplex[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.194      ;
+; -6.527 ; contador_multiplex[1]  ; contador_multiplex[20] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.194      ;
+; -6.526 ; contador_multiplex[1]  ; contador_multiplex[25] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.193      ;
+; -6.521 ; contador_multiplex[1]  ; contador_multiplex[24] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.188      ;
+; -6.518 ; contador_multiplex[4]  ; contador_multiplex[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 7.185      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk_multiplex'                                                                                              ;
++--------+-----------------+-----------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node         ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-----------------+---------------+---------------+--------------+------------+------------+
+; -1.511 ; digito_atual[1] ; digito_atual[1] ; clk_multiplex ; clk_multiplex ; 1.000        ; 0.000      ; 2.178      ;
+; -1.217 ; digito_atual[0] ; digito_atual[1] ; clk_multiplex ; clk_multiplex ; 1.000        ; 0.000      ; 1.884      ;
+; -1.215 ; digito_atual[0] ; digito_atual[0] ; clk_multiplex ; clk_multiplex ; 1.000        ; 0.000      ; 1.882      ;
++--------+-----------------+-----------------+---------------+---------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk_50MHz'                                                                                                               ;
++--------+------------------------+------------------------+---------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+---------------+-------------+--------------+------------+------------+
+; -1.597 ; clk_multiplex          ; clk_multiplex          ; clk_multiplex ; clk_50MHz   ; 0.000        ; 3.348      ; 2.348      ;
+; -1.097 ; clk_multiplex          ; clk_multiplex          ; clk_multiplex ; clk_50MHz   ; -0.500       ; 3.348      ; 2.348      ;
+; 2.852  ; contador_multiplex[26] ; contador_multiplex[26] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.073      ;
+; 2.852  ; contador_multiplex[31] ; contador_multiplex[31] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.073      ;
+; 3.026  ; contador_multiplex[30] ; contador_multiplex[30] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.247      ;
+; 3.103  ; contador_multiplex[4]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.324      ;
+; 3.262  ; contador_multiplex[27] ; contador_multiplex[27] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.483      ;
+; 3.616  ; contador_multiplex[1]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.837      ;
+; 3.632  ; contador_multiplex[12] ; contador_multiplex[12] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.853      ;
+; 3.673  ; contador_multiplex[2]  ; contador_multiplex[2]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.894      ;
+; 3.681  ; contador_multiplex[4]  ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.902      ;
+; 3.682  ; contador_multiplex[4]  ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.903      ;
+; 3.682  ; contador_multiplex[4]  ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.903      ;
+; 3.685  ; contador_multiplex[4]  ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.906      ;
+; 3.760  ; contador_multiplex[9]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.981      ;
+; 3.774  ; contador_multiplex[4]  ; contador_multiplex[14] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.995      ;
+; 3.775  ; contador_multiplex[4]  ; contador_multiplex[7]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 3.996      ;
+; 3.838  ; contador_multiplex[12] ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.059      ;
+; 3.923  ; contador_multiplex[26] ; contador_multiplex[27] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.144      ;
+; 3.928  ; contador_multiplex[14] ; contador_multiplex[14] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.149      ;
+; 3.932  ; contador_multiplex[29] ; contador_multiplex[29] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.153      ;
+; 4.000  ; contador_multiplex[26] ; contador_multiplex[30] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.221      ;
+; 4.049  ; contador_multiplex[7]  ; contador_multiplex[7]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.270      ;
+; 4.062  ; contador_multiplex[29] ; contador_multiplex[30] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.283      ;
+; 4.087  ; contador_multiplex[4]  ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.308      ;
+; 4.091  ; contador_multiplex[27] ; contador_multiplex[30] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.312      ;
+; 4.117  ; contador_multiplex[24] ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.338      ;
+; 4.134  ; contador_multiplex[2]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.355      ;
+; 4.160  ; contador_multiplex[30] ; contador_multiplex[31] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.381      ;
+; 4.163  ; contador_multiplex[24] ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.384      ;
+; 4.166  ; contador_multiplex[24] ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.387      ;
+; 4.172  ; contador_multiplex[24] ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.393      ;
+; 4.178  ; contador_multiplex[24] ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.399      ;
+; 4.186  ; contador_multiplex[28] ; contador_multiplex[30] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.407      ;
+; 4.194  ; contador_multiplex[1]  ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.415      ;
+; 4.195  ; contador_multiplex[1]  ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.416      ;
+; 4.195  ; contador_multiplex[1]  ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.416      ;
+; 4.198  ; contador_multiplex[1]  ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.419      ;
+; 4.287  ; contador_multiplex[1]  ; contador_multiplex[14] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.508      ;
+; 4.288  ; contador_multiplex[1]  ; contador_multiplex[7]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.509      ;
+; 4.297  ; contador_multiplex[8]  ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.518      ;
+; 4.318  ; contador_multiplex[4]  ; contador_multiplex[4]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.539      ;
+; 4.338  ; contador_multiplex[9]  ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.559      ;
+; 4.339  ; contador_multiplex[9]  ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.560      ;
+; 4.339  ; contador_multiplex[9]  ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.560      ;
+; 4.342  ; contador_multiplex[5]  ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.563      ;
+; 4.342  ; contador_multiplex[9]  ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.563      ;
+; 4.416  ; contador_multiplex[12] ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.637      ;
+; 4.417  ; contador_multiplex[12] ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.638      ;
+; 4.417  ; contador_multiplex[12] ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.638      ;
+; 4.419  ; contador_multiplex[26] ; contador_multiplex[31] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.640      ;
+; 4.420  ; contador_multiplex[12] ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.641      ;
+; 4.431  ; contador_multiplex[9]  ; contador_multiplex[14] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.652      ;
+; 4.432  ; contador_multiplex[9]  ; contador_multiplex[7]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.653      ;
+; 4.481  ; contador_multiplex[29] ; contador_multiplex[31] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.702      ;
+; 4.509  ; contador_multiplex[12] ; contador_multiplex[14] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.730      ;
+; 4.510  ; contador_multiplex[12] ; contador_multiplex[7]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.731      ;
+; 4.510  ; contador_multiplex[27] ; contador_multiplex[31] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.731      ;
+; 4.529  ; contador_multiplex[3]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.750      ;
+; 4.563  ; contador_multiplex[0]  ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.784      ;
+; 4.566  ; contador_multiplex[26] ; contador_multiplex[29] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.787      ;
+; 4.586  ; contador_multiplex[24] ; contador_multiplex[14] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.807      ;
+; 4.587  ; contador_multiplex[24] ; contador_multiplex[7]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.808      ;
+; 4.592  ; contador_multiplex[5]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.813      ;
+; 4.600  ; contador_multiplex[1]  ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.821      ;
+; 4.605  ; contador_multiplex[28] ; contador_multiplex[31] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.826      ;
+; 4.639  ; contador_multiplex[24] ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.860      ;
+; 4.650  ; contador_multiplex[20] ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.871      ;
+; 4.657  ; contador_multiplex[27] ; contador_multiplex[29] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.878      ;
+; 4.686  ; contador_multiplex[1]  ; contador_multiplex[2]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.907      ;
+; 4.696  ; contador_multiplex[20] ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.917      ;
+; 4.697  ; contador_multiplex[28] ; contador_multiplex[28] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.918      ;
+; 4.699  ; contador_multiplex[20] ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.920      ;
+; 4.703  ; contador_multiplex[7]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.924      ;
+; 4.705  ; contador_multiplex[20] ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.926      ;
+; 4.711  ; contador_multiplex[20] ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.932      ;
+; 4.712  ; contador_multiplex[2]  ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.933      ;
+; 4.713  ; contador_multiplex[2]  ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.934      ;
+; 4.713  ; contador_multiplex[2]  ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.934      ;
+; 4.716  ; contador_multiplex[2]  ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.937      ;
+; 4.725  ; contador_multiplex[22] ; contador_multiplex[22] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.946      ;
+; 4.738  ; contador_multiplex[24] ; contador_multiplex[24] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.959      ;
+; 4.744  ; contador_multiplex[9]  ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.965      ;
+; 4.752  ; contador_multiplex[28] ; contador_multiplex[29] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.973      ;
+; 4.778  ; contador_multiplex[25] ; contador_multiplex[25] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 4.999      ;
+; 4.795  ; contador_multiplex[28] ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.016      ;
+; 4.805  ; contador_multiplex[2]  ; contador_multiplex[14] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.026      ;
+; 4.806  ; contador_multiplex[2]  ; contador_multiplex[7]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.027      ;
+; 4.822  ; contador_multiplex[12] ; contador_multiplex[8]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.043      ;
+; 4.827  ; contador_multiplex[0]  ; contador_multiplex[3]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.048      ;
+; 4.829  ; contador_multiplex[21] ; contador_multiplex[21] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.050      ;
+; 4.841  ; contador_multiplex[28] ; contador_multiplex[0]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.062      ;
+; 4.844  ; contador_multiplex[28] ; contador_multiplex[13] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.065      ;
+; 4.850  ; contador_multiplex[28] ; clk_multiplex          ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.071      ;
+; 4.856  ; contador_multiplex[28] ; contador_multiplex[5]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.077      ;
+; 4.859  ; contador_multiplex[20] ; contador_multiplex[20] ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.080      ;
+; 4.958  ; contador_multiplex[0]  ; contador_multiplex[2]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.179      ;
+; 5.049  ; contador_multiplex[1]  ; contador_multiplex[1]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.270      ;
+; 5.109  ; contador_multiplex[9]  ; contador_multiplex[9]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.330      ;
+; 5.117  ; contador_multiplex[6]  ; contador_multiplex[6]  ; clk_50MHz     ; clk_50MHz   ; 0.000        ; 0.000      ; 5.338      ;
++--------+------------------------+------------------------+---------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk_multiplex'                                                                                              ;
++-------+-----------------+-----------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node       ; To Node         ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------+-----------------+---------------+---------------+--------------+------------+------------+
+; 1.661 ; digito_atual[0] ; digito_atual[0] ; clk_multiplex ; clk_multiplex ; 0.000        ; 0.000      ; 1.882      ;
+; 1.663 ; digito_atual[0] ; digito_atual[1] ; clk_multiplex ; clk_multiplex ; 0.000        ; 0.000      ; 1.884      ;
+; 1.957 ; digito_atual[1] ; digito_atual[1] ; clk_multiplex ; clk_multiplex ; 0.000        ; 0.000      ; 2.178      ;
++-------+-----------------+-----------------+---------------+---------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk_50MHz'                                                                                ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk_50MHz ; Rise       ; clk_50MHz                  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_multiplex              ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_multiplex              ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[14]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[14]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[15]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[15]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[16]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[16]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[17]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[17]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[18]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[18]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[19]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[19]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[20]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[20]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[21]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[21]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[22]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[22]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[23]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[23]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[24]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[24]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[25]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[25]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[26]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[26]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[27]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[27]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[28]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[28]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[29]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[29]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[30]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[30]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[31]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[31]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[9]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[9]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_50MHz|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_50MHz|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_multiplex|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_multiplex|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; contador_multiplex[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; contador_multiplex[22]|clk ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk_multiplex'                                                                         ;
++-------+--------------+----------------+------------------+---------------+------------+----------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock         ; Clock Edge ; Target               ;
++-------+--------------+----------------+------------------+---------------+------------+----------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; clk_multiplex ; Rise       ; digito_atual[0]      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_multiplex ; Rise       ; digito_atual[0]      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; clk_multiplex ; Rise       ; digito_atual[1]      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_multiplex ; Rise       ; digito_atual[1]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; clk_multiplex ; Rise       ; clk_multiplex|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_multiplex ; Rise       ; clk_multiplex|regout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; clk_multiplex ; Rise       ; digito_atual[0]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_multiplex ; Rise       ; digito_atual[0]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; clk_multiplex ; Rise       ; digito_atual[1]|clk  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_multiplex ; Rise       ; digito_atual[1]|clk  ;
++-------+--------------+----------------+------------------+---------------+------------+----------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++------------------+---------------+--------+--------+------------+-----------------+
+; Data Port        ; Clock Port    ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------+---------------+--------+--------+------------+-----------------+
+; digit_output[*]  ; clk_multiplex ; 10.068 ; 10.068 ; Rise       ; clk_multiplex   ;
+;  digit_output[0] ; clk_multiplex ; 10.068 ; 10.068 ; Rise       ; clk_multiplex   ;
+;  digit_output[1] ; clk_multiplex ; 8.873  ; 8.873  ; Rise       ; clk_multiplex   ;
+;  digit_output[2] ; clk_multiplex ; 9.956  ; 9.956  ; Rise       ; clk_multiplex   ;
+; seg_output[*]    ; clk_multiplex ; 10.464 ; 10.464 ; Rise       ; clk_multiplex   ;
+;  seg_output[0]   ; clk_multiplex ; 8.733  ; 8.733  ; Rise       ; clk_multiplex   ;
+;  seg_output[2]   ; clk_multiplex ; 8.733  ; 8.733  ; Rise       ; clk_multiplex   ;
+;  seg_output[5]   ; clk_multiplex ; 10.464 ; 10.464 ; Rise       ; clk_multiplex   ;
++------------------+---------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++------------------+---------------+--------+--------+------------+-----------------+
+; Data Port        ; Clock Port    ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------+---------------+--------+--------+------------+-----------------+
+; digit_output[*]  ; clk_multiplex ; 8.835  ; 8.835  ; Rise       ; clk_multiplex   ;
+;  digit_output[0] ; clk_multiplex ; 10.026 ; 10.026 ; Rise       ; clk_multiplex   ;
+;  digit_output[1] ; clk_multiplex ; 8.835  ; 8.835  ; Rise       ; clk_multiplex   ;
+;  digit_output[2] ; clk_multiplex ; 9.917  ; 9.917  ; Rise       ; clk_multiplex   ;
+; seg_output[*]    ; clk_multiplex ; 8.733  ; 8.733  ; Rise       ; clk_multiplex   ;
+;  seg_output[0]   ; clk_multiplex ; 8.733  ; 8.733  ; Rise       ; clk_multiplex   ;
+;  seg_output[2]   ; clk_multiplex ; 8.733  ; 8.733  ; Rise       ; clk_multiplex   ;
+;  seg_output[5]   ; clk_multiplex ; 10.422 ; 10.422 ; Rise       ; clk_multiplex   ;
++------------------+---------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Transfers                                                           ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; clk_50MHz     ; clk_50MHz     ; 1168     ; 0        ; 0        ; 0        ;
+; clk_multiplex ; clk_50MHz     ; 1        ; 1        ; 0        ; 0        ;
+; clk_multiplex ; clk_multiplex ; 3        ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------+
+; Hold Transfers                                                            ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; clk_50MHz     ; clk_50MHz     ; 1168     ; 0        ; 0        ; 0        ;
+; clk_multiplex ; clk_50MHz     ; 1        ; 1        ; 0        ; 0        ;
+; clk_multiplex ; clk_multiplex ; 3        ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 6     ; 6    ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Nov 05 21:34:03 2024
+Info: Command: quartus_sta gerador_pwm_display -c gerador_pwm_display
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'gerador_pwm_display.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk_multiplex clk_multiplex
+    Info (332105): create_clock -period 1.000 -name clk_50MHz clk_50MHz
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.782
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -7.782      -216.419 clk_50MHz 
+    Info (332119):    -1.511        -2.726 clk_multiplex 
+Info (332146): Worst-case hold slack is -1.597
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.597        -1.597 clk_50MHz 
+    Info (332119):     1.661         0.000 clk_multiplex 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 clk_50MHz 
+    Info (332119):     0.234         0.000 clk_multiplex 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4516 megabytes
+    Info: Processing ended: Tue Nov 05 21:34:03 2024
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

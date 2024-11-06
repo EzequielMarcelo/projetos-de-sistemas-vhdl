@@ -1,0 +1,47 @@
+|gerador_pwm_display
+clk_50MHz => clk_multiplex.CLK
+clk_50MHz => contador_multiplex[0].CLK
+clk_50MHz => contador_multiplex[1].CLK
+clk_50MHz => contador_multiplex[2].CLK
+clk_50MHz => contador_multiplex[3].CLK
+clk_50MHz => contador_multiplex[4].CLK
+clk_50MHz => contador_multiplex[5].CLK
+clk_50MHz => contador_multiplex[6].CLK
+clk_50MHz => contador_multiplex[7].CLK
+clk_50MHz => contador_multiplex[8].CLK
+clk_50MHz => contador_multiplex[9].CLK
+clk_50MHz => contador_multiplex[10].CLK
+clk_50MHz => contador_multiplex[11].CLK
+clk_50MHz => contador_multiplex[12].CLK
+clk_50MHz => contador_multiplex[13].CLK
+clk_50MHz => contador_multiplex[14].CLK
+clk_50MHz => contador_multiplex[15].CLK
+clk_50MHz => contador_multiplex[16].CLK
+clk_50MHz => contador_multiplex[17].CLK
+clk_50MHz => contador_multiplex[18].CLK
+clk_50MHz => contador_multiplex[19].CLK
+clk_50MHz => contador_multiplex[20].CLK
+clk_50MHz => contador_multiplex[21].CLK
+clk_50MHz => contador_multiplex[22].CLK
+clk_50MHz => contador_multiplex[23].CLK
+clk_50MHz => contador_multiplex[24].CLK
+clk_50MHz => contador_multiplex[25].CLK
+clk_50MHz => contador_multiplex[26].CLK
+clk_50MHz => contador_multiplex[27].CLK
+clk_50MHz => contador_multiplex[28].CLK
+clk_50MHz => contador_multiplex[29].CLK
+clk_50MHz => contador_multiplex[30].CLK
+clk_50MHz => contador_multiplex[31].CLK
+digit_output[0] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+digit_output[1] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+digit_output[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+digit_output[3] <= <VCC>
+seg_output[0] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+seg_output[1] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+seg_output[2] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+seg_output[3] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+seg_output[4] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+seg_output[5] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_output[6] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+
+

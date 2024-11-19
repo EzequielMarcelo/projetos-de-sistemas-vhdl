@@ -1,0 +1,130 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity clock_7_seg is
+    Port ( 
+        clk_50MHZ : in STD_LOGIC;
+		  output : in std_LOGIC;
+    );
+end clock_7_seg;
+
+architecture Behavioral of clock_7_seg is
+   
+    constant DIVISOR_CLOCK : INTEGER := 5000000 / 2; 
+	 constant DIVISOR_MULTIPLEX : INTEGER := 50000 / 2;    
+    
+    signal contador_clock : INTEGER := 0; 
+	 signal contador_multiplex : INTEGER := 0;
+    signal clk_clock : STD_LOGIC := '0'; 
+	 signal clk_multiplex : STD_LOGIC := '0';
+	 signal digito_atual : unsigned (1 downto 0) := (others => '0');
+	 signal uni : unsigned (3 downto 0)    := to_unsigned(0, 4);
+	 signal dec : unsigned (3 downto 0)    := to_unsigned(0, 4);
+	 signal cen : unsigned (3 downto 0)    := to_unsigned(0, 4);
+	 signal mil : unsigned (3 downto 0)    := to_unsigned(0, 4);
+	 signal valor_plotado : unsigned (3 downto 0) := (others => '0');
+    
+begin	
+    process(clk_50MHZ)
+    begin
+        if rising_edge(clk_50MHZ) then
+            if contador_clock = DIVISOR_CLOCK then
+                contador_clock <= 0;
+                clk_clock <= not clk_clock; 
+					 led <= clk_clock;
+            else
+                contador_clock <= contador_clock + 1;
+            end if;
+				
+				if contador_multiplex = DIVISOR_MULTIPLEX then
+                contador_multiplex <= 0;
+                clk_multiplex <= not clk_multiplex; 
+            else
+                contador_multiplex <= contador_multiplex + 1;
+            end if;
+        end if;
+    end process;
+
+	 --varre os digitos
+    process(clk_multiplex)
+    begin
+        if rising_edge(clk_multiplex) then
+				if digito_atual >= to_unsigned(3, 2) then
+					digito_atual <= (others => '0'); 
+				else
+					digito_atual <= digito_atual + 1; 
+				end if;
+        end if;
+    end process;
+	 
+	 process(clk_clock)
+    begin
+        if rising_edge(clk_clock) then
+				if uni >= to_unsigned(9, 4) then
+					uni <= (others => '0'); 
+					dec <= dec + 1; 
+					if dec >= to_unsigned(5, 4) then
+						dec <= (others => '0'); 
+						cen <= cen + 1;
+						if mil >= to_unsigned(2, 4) and cen >= to_unsigned(3, 4) then --Conta ate 23h
+							mil <= (others => '0');
+							cen <= (others => '0');
+						else
+							if cen >= to_unsigned(9, 4) then
+								cen <= (others => '0'); 
+								mil <= mil + 1; 
+							end if;			
+						end if;
+					end if;
+				else
+					uni <= uni + 1; 
+				end if;		
+				
+				if button_22 = '0' then
+					 uni <= to_unsigned(0, 4);
+					 dec <= to_unsigned(0, 4);
+					 cen <= to_unsigned(2, 4);
+					 mil <= to_unsigned(2, 4);
+				end if;
+				
+				if button_00 = '0' then
+					 uni <= to_unsigned(0, 4);
+					 dec <= to_unsigned(0, 4);
+					 cen <= to_unsigned(0, 4);
+					 mil <= to_unsigned(0, 4);
+				end if;
+			end if;
+    end process;
+	 
+	 -- seleciona o digito a ser plotado
+	 with digito_atual select
+        valor_plotado <= uni when "00",  -- Valor a ser plotado recebe valor da unidade
+								 dec when "01",  -- Valor a ser plotado recebe valor da dezena
+								 cen when "10",  -- Valor a ser plotado recebe valor da centena
+								 mil when "11",  -- Valor a ser plotado recebe valor do milhar
+								 "0000" when others;  -- Plota zero
+								
+	 -- acende o digito do display a ser plotado
+	 with digito_atual select
+        digit_output <= "1110" when "00",  -- Habilita o digito da unidade
+								"1101" when "01",  -- Habilita o digito da dezena
+								"1011" when "10",  -- Habilita o digito da centena unidades
+								"0111" when "11",  -- Habilita o digito do milhar
+								"1111" when others;  -- Desabilita todos os digitos
+	 
+	 -- tranforma o valor a ser plotado de bin para 7 seg					 
+    with valor_plotado select
+        seg_output <= "1111110" when "0000",  -- Display mostra 0
+                      "0110000" when "0001",  -- Display mostra 1
+                      "1101101" when "0010",  -- Display mostra 2
+                      "1111001" when "0011",  -- Display mostra 3
+                      "0110011" when "0100",  -- Display mostra 4
+                      "1011011" when "0101",  -- Display mostra 5
+                      "1011111" when "0110",  -- Display mostra 6
+                      "1110000" when "0111",  -- Display mostra 7
+                      "1111111" when "1000",  -- Display mostra 8
+                      "1111011" when "1001",  -- Display mostra 9
+                      "0000000" when others;  -- Segments off (all low)
+
+end Behavioral;

@@ -1,5 +1,5 @@
 Assembler report for gerador_pwm_display
-Tue Nov 05 21:34:02 2024
+Tue Nov 19 20:54:19 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/20231CECA0346/Desktop/projetos-de-sistemas-vhd/GeradorPWMComDisplay7Seg/output_files/gerador_pwm_display.pof
+  5. Assembler Device Options: C:/Users/Marcelo/Documents/Engenharia de Controle e Automacao/Projetos de Sistemas/projetos-de-sistemas-vhd/GeradorPWMComDisplay7Seg/output_files/gerador_pwm_display.pof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Nov 05 21:34:02 2024 ;
+; Assembler Status      ; Successful - Tue Nov 19 20:54:19 2024 ;
 ; Revision Name         ; gerador_pwm_display                   ;
 ; Top-level Entity Name ; gerador_pwm_display                   ;
 ; Family                ; MAX II                                ;
@@ -75,24 +75,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+-----------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; C:/Users/20231CECA0346/Desktop/projetos-de-sistemas-vhd/GeradorPWMComDisplay7Seg/output_files/gerador_pwm_display.pof ;
-+-----------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Marcelo/Documents/Engenharia de Controle e Automacao/Projetos de Sistemas/projetos-de-sistemas-vhd/GeradorPWMComDisplay7Seg/output_files/gerador_pwm_display.pof ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/20231CECA0346/Desktop/projetos-de-sistemas-vhd/GeradorPWMComDisplay7Seg/output_files/gerador_pwm_display.pof ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                        ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
-; Device         ; EPM240T100C5                                                                                                                   ;
-; JTAG usercode  ; 0x00187316                                                                                                                     ;
-; Checksum       ; 0x00187696                                                                                                                     ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Marcelo/Documents/Engenharia de Controle e Automacao/Projetos de Sistemas/projetos-de-sistemas-vhd/GeradorPWMComDisplay7Seg/output_files/gerador_pwm_display.pof ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                                                            ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EPM240T100C5                                                                                                                                                                       ;
+; JTAG usercode  ; 0x00187316                                                                                                                                                                         ;
+; Checksum       ; 0x00187696                                                                                                                                                                         ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -101,14 +101,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Nov 05 21:34:02 2024
+    Info: Processing started: Tue Nov 19 20:54:18 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off gerador_pwm_display -c gerador_pwm_display
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4509 megabytes
-    Info: Processing ended: Tue Nov 05 21:34:02 2024
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4511 megabytes
+    Info: Processing ended: Tue Nov 19 20:54:19 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

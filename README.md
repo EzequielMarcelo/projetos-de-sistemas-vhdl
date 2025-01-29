@@ -14,7 +14,17 @@ O desenvolvimento dos projetos utiliza a PLACA EPM240T100C5N com gravador USB Bl
 ## Shields Auxiliares
 
 <p align="center"><img src="Resources/Imagens/Shield.png" height="400"></p>
-1. SHIELD_BASE
+
+1. Placa EPM240T100C5N:
+
+| Componente  | Descrição        | Pinos  |
+|-------------|------------------|--------|
+|  Onboard    | Clock  50MHz     |  12    |
+|             | LED              |  77    |
+
+
+
+2. SHIELD_BASE
 
 | Componente  | Descrição        | Pinos  |
 |-------------|------------------|--------|
@@ -51,7 +61,7 @@ O desenvolvimento dos projetos utiliza a PLACA EPM240T100C5N com gravador USB Bl
 
 
 
-2. SHIELD_ADDA
+3. SHIELD_ADDA
 
 | Componente            | Descrição                       | Pinos                           |
 |-----------------------|---------------------------------|---------------------------------|

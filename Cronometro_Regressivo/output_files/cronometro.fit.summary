@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Feb 05 19:42:25 2025
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : cronometro
+Top-level Entity Name : cronometro
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 202 / 240 ( 84 % )
+Total pins : 18 / 80 ( 23 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

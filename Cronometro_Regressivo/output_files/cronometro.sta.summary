@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk_50MHz'
+Slack : -8.583
+TNS   : -493.904
+
+Type  : Setup 'clk_1Hz'
+Slack : -7.833
+TNS   : -112.154
+
+Type  : Setup 'clk_beep'
+Slack : -1.242
+TNS   : -2.482
+
+Type  : Setup 'clk_multiplex'
+Slack : -1.193
+TNS   : -1.193
+
+Type  : Hold 'clk_50MHz'
+Slack : -1.816
+TNS   : -5.093
+
+Type  : Hold 'clk_beep'
+Slack : 0.528
+TNS   : 0.000
+
+Type  : Hold 'clk_multiplex'
+Slack : 1.639
+TNS   : 0.000
+
+Type  : Hold 'clk_1Hz'
+Slack : 1.936
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk_50MHz'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'clk_1Hz'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk_beep'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk_multiplex'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------
